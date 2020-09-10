@@ -29,7 +29,7 @@ def GreeksAtExpiration(strikePrice, stockValue, greek, r=0.03):
 
 def Greeks(strikePrice, stockValue, daysToExp, greek, volatility=0.17, r=0.03):
     if daysToExp <= 0:
-        return GreeksAtExpiration(strikePrice, stockValue, greek)
+        return GreeksAtExpiration(strikePrice, stockValue, greek, r)
     greek = greek.lower()
     S, K, t, sigma, d1, d2, PV = calcVars(strikePrice, stockValue, daysToExp, volatility, r)
     if greek == "delta":
